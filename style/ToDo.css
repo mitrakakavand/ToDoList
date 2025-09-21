@@ -34,28 +34,85 @@
   padding: 0;
 }
 body{
+  width: 100%;
+  height: 100vh;
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
     background-color: var(--bg);
 }
-
-.todo{
+input:focus{
+  outline: none;
+}
+.container{
+  
   width: 80%;
   height: 100%;
-  margin: 0 auto;
+  margin: 30px 35px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid #555555;
 }
+.todo{
+  padding: 30px;
+   width: 100%;
+  height: 100%;
 
-.todo h1 {
+}
+.todo h1,h4 {
   font-size: 2rem;
   margin-bottom: 20px;
   color: var(--text);
 }
+#task-form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px; 
+  flex-wrap: wrap; 
+  width: 100%;
+  max-width: 700px;
 
+
+}
+#add-task {
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #555555;  /* رنگ border فرم */
+  background-color: #1e1e1e;  /* رنگ پس‌زمینه فرم */
+  border-radius: 8px;
+  padding: 10px;
+}
+
+#add-task form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+#add-task .task {
+  background-color: #2a2a2a;  
+  color: #ffffff;  
+  width: 50%;
+  height: 34px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: width 0.3s ease, border-color 0.3s ease;
+}
+
+#add-task .task:focus {
+  width: 70%;
+  border-color: #FFA955;  /* رنگ border در focus */
+  background-color: #1a1a1a;  /* رنگ پس‌زمینه در focus */
+  outline: none;
+  color: #ffffff;  /* رنگ متن در focus */
+}
 .btn {
+  width: 131px;
+  height: 34px;
   background: linear-gradient(135deg, #FFA955, #FF6B6B);
   color: white;
   padding: 10px 20px;
@@ -63,7 +120,7 @@ body{
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: 35px;
+  
 }
 
 .btn:hover {
