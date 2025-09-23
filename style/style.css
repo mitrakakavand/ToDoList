@@ -1,4 +1,3 @@
-
 /* Color variables for light and dark themes */
 [data-theme="light"] {
   --bg: #EDEDED;
@@ -39,16 +38,18 @@ body{
     padding: 0%;
     box-sizing: border-box;
     background-color: #0F0F0F;
+    overflow-x: hidden;
 }
 /* header style*/
 #header {
     display: flex;
-    width: 80%;
+    width: 100%;
     height: 40px;
     background-color: var(--card-bg);
     align-items: center;
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 10%;
+    margin-top: 10px;
 }
 /* search box style */
 .search-box {
@@ -100,3 +101,82 @@ body{
 .icon i:hover {
     color: #FFA955;
 }
+/*end header*/
+
+/* user style */
+.user {
+    margin-left:25%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 240px;
+    height: 56px;
+    position: relative;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;     
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.user-email {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.user-card i {
+  margin-left: 10px;
+  color: white;
+  cursor: pointer;
+}
+/*dropdown-menu style*/
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; 
+    right: 0;
+    background: #151515;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #FFA955;
+    padding: 10px;
+    z-index: 100;
+}
+
+  .dropdown-menu a:hover{
+  background-color: rgba(255, 141, 29, 0.2);
+  color: #FFA955;
+}
+.dropdown-menu a:hover i{  color: #FFA955;
+}
+.dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 10px; 
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+    min-height: 30px;
+}
+
+
+  .dropdown-toggle {
+    cursor: pointer;
+  }
+/* end user style */
