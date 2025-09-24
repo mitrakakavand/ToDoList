@@ -1,4 +1,3 @@
-alert('hi');
 const spans = document.querySelectorAll('.word span');
 
 spans.forEach((span, idx) => {
