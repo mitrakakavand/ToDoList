@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Header Buttons</title>
+<style>
+  .header-button {
+    display: flex;
+    gap: 50px; /* فاصله بین دکمه‌ها */
+  }
+
+  .header-button button {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  /* خط زیر در حالت هاور و اکتیو */
+  .header-button button::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: black;
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .header-button button:hover::after,
+  .header-button button.active::after {
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-button">
+  <button id="login-header" onclick="location.href='login.html'">Login</button>
+  <button id="signup-header" onclick="location.href='signUp.html'">Signup</button>
+</div>
+
+<script>
+  // بررسی صفحه فعلی و اضافه کردن کلاس active
+  const path = window.location.pathname;
+  if (path.includes('login.html')) {
+    document.getElementById('login-header').classList.add('active');
+  } else if (path.includes('signUp.html')) {
+    document.getElementById('signup-header').classList.add('active');
+  }
+</script>
+
+</body>
+</html>
