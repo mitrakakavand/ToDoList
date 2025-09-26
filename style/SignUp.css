@@ -1,0 +1,58 @@
+@import url(reset.css);
+html, body {
+  font-family: 'Dongle', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* word animations */
+.word span:nth-child(6).active {
+  animation: p-bounce 1s cubic-bezier(.68,-0.55,.27,1.55);
+  transform-origin: bottom center;
+}
+
+@keyframes p-bounce {
+  0%   { transform: translateY(0);}
+  30%  { transform: translateY(-35px) scale(1.2);}
+  50%  { transform: translateY(0) scale(1);}
+  70%  { transform: translateY(-15px) scale(1.1);}
+  100% { transform: translateY(0) scale(1);}
+}
+/* signup style */
+#signup {
+  width: 300px;
+  height: 520px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  background: rgba(239, 239, 239, 0.55);
+  padding: 32px 40px;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+/* form buttons */
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.btn-signup {
+  width: 100px;
+  height: 36px;
+  font-size: 16px;
+  margin-top: 0;
+   background: linear-gradient(to right, #aa4ecb, #cb51a0);
+  border: none;
+  border-radius: 45px;
+  font-size: large;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn-signup:hover {
+  background: linear-gradient(to right, #cb51a0, #aa4ecb);
+}

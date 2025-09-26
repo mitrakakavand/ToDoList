@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>signUp</title>
+    <link rel="stylesheet" href="../style/SignUp.css">
+    <link rel="stylesheet" href="../style/login.css">
 </head>
 <body>
-    <h1>hiiiiii</h1>
+    <div class="gradient-bg">
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+        <feBlend in="SourceGraphic" in2="goo" />
+      </filter>
+    </defs>
+  </svg>
+  <div class="gradients-container">
+    <div class="g1"></div>
+    <div class="g2"></div>
+    <div class="g3"></div>
+    <div class="g4"></div>
+    <div class="g5"></div>
+    <div class="interactive"></div>
+  </div>
+</div>
+<section id="signup">
+  <div class="header-button">
+    <button id="login-header" onclick="location.href='login.html'">Login</button>
+    <button id="signup-header" onclick="location.href='signUp.html'">Signup</button>
+  </div>
+  <div class="word">
+    <span>S</span>
+    <span>I</span>
+    <span>G</span>
+    <span>N</span>
+    <span>U</span>
+    <span>P</span>
+  </div>
+  <label for="user-name" class="label">user-name</label>
+  <input type="text" id="name" placeholder="your name" class="input">
+
+  <label for="password" class="label">password</label>
+  <input type="password" id="password" placeholder="your pass" class="input">
+  <label for="repassword" class="label"> repeat password</label>
+  <input type="password" id="repassword" placeholder="your pass" class="input">
+  
+  <div class="form-buttons">
+    <button class="btn-signup ">Login</button>
+    <button class="btn-signup ">Signup</button>
+  </div>
+</section>
+    <script src="../js/login.js"></script>
+        <script src="../js/SignUp.js"></script>
+
 </body>
 </html>
