@@ -1,8 +1,13 @@
 async function loadHeader() {
-  const response = await fetch("../pages/header.html");
-  const data = await response.text();
-  const header = document.getElementById("header");
-  header.innerHTML = data;
+  try {
+    const response = await fetch("/pages/header.html");
+    if (!response.ok) throw new Error('Header fetch failed: ' + response.status);
+    const data = await response.text();
+    const header = document.getElementById("header");
+    header.innerHTML = data;
+  } catch (err) {
+    console.error('Could not load header:', err);
+  }
 
   // --- dropdown menu ---
   const toggle = header.querySelector('.dropdown-toggle');

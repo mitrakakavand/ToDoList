@@ -1,5 +1,17 @@
 /* definition of variables */
 /*ToDo Form Variables*/ 
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof initializeDashboard === 'function') initializeDashboard();
+  if (typeof setActivePage === 'function') setActivePage();
+  if (typeof userNmaeManagmennt === 'function') userNmaeManagmennt();
+  if (typeof setupNotificationsSystem === 'function') setupNotificationsSystem();
+  if (typeof initializeTodayOrdersChart === 'function') initializeTodayOrdersChart();
+  if (typeof setupChartEventHandlers === 'function') setupChartEventHandlers();
+  if (typeof setupMobileProfileMenu === 'function') setupMobileProfileMenu();
+  if (typeof setupInspectFix === 'function') setupInspectFix();
+  if (typeof setupSidebarCloseButton === 'function') setupSidebarCloseButton();
+ 
+});
 let ToDoForm = document.querySelector("#ToDo-form");
 let taskInput = document.querySelector(".task");
 let taskListUL = document.querySelector("#task ul");
