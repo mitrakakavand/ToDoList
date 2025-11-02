@@ -1,21 +1,23 @@
 async function loadHeader() {
+  const headerContainer = document.getElementById("header");
+  if (!headerContainer) return;
+
   try {
-    const response = await fetch("/pages/header.html");
-    if (!response.ok) throw new Error('Header fetch failed: ' + response.status);
-    const data = await response.text();
-    const header = document.getElementById("header");
-    header.innerHTML = data;
+    const res = await fetch("/header.html");
+    if (!res.ok) throw new Error('Header fetch failed: ' + res.status);
+    const html = await res.text();
+    headerContainer.innerHTML = html;
   } catch (err) {
     console.error('Could not load header:', err);
   }
 
   // --- dropdown menu ---
-  const toggle = header.querySelector('.dropdown-toggle');
-  const menu = header.querySelector('.dropdown-menu');
+  const toggle = headerContainer.querySelector('.dropdown-toggle');
+  const menu = headerContainer.querySelector('.dropdown-menu');
 
-  if(toggle && menu) {
+  if (toggle && menu) {
     toggle.addEventListener('click', (e) => {
-      e.stopPropagation(); 
+      e.stopPropagation();
       menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'flex' : 'none';
     });
 
@@ -27,23 +29,23 @@ async function loadHeader() {
   }
 
   // --- Login / Logout ---
-  const authButtons = header.querySelector("#auth-buttons");
-  const userBox = header.querySelector("#user-box");
-  const loginBtn = header.querySelector("#login-btn");
-  const logoutBtn = header.querySelector("#logout-btn");
+  const authButtons = headerContainer.querySelector("#auth-buttons");
+  const userBox = headerContainer.querySelector("#user-box");
+  const loginBtn = headerContainer.querySelector("#login-btn");
+  const logoutBtn = headerContainer.querySelector("#logout-btn");
 
-  if(loginBtn && logoutBtn && authButtons && userBox){
+  if (loginBtn && logoutBtn && authButtons && userBox) {
     userBox.style.display = "none";
     authButtons.style.display = "flex";
 
     loginBtn.addEventListener("click", () => {
-      authButtons.style.display = "none"; 
-      userBox.style.display = "flex";     
+      authButtons.style.display = "none";
+      userBox.style.display = "flex";
     });
 
     logoutBtn.addEventListener("click", () => {
-      userBox.style.display = "none";     
-      authButtons.style.display = "flex"; 
+      userBox.style.display = "none";
+      authButtons.style.display = "flex";
     });
   }
 }
