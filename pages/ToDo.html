@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
-    <link rel="stylesheet" href="../style/ToDo.css">
+    <link rel="stylesheet" href="/style/ToDo.css">
 </head>
 <body>
+    <!-- header will be loaded by /js/main.js -->
+    <div id="header"></div>
+
     <div class="container">
-    <div class="todo">
+      <div class="todo">
         <h1>To-Do List</h1>
         <h4>Remember what you need to do ...</h4>
+
         <section id="add-task">
             <form action="#" id="ToDo-form">
                 <input type="text" placeholder="Add a new task..." class="task" required>
                 <button type="submit" class="btn">Add Task</button>
             </form>
        </section>
-<section id="task">
-    <ul></ul>
-</section>
-<span id="total">Total Tasks: <span id="count">0</span></span>
+
+       <section id="task">
+          <ul></ul>
+       </section>
+
+       <span id="total">Total Tasks: <span id="count">0</span></span>
+      </div>
     </div>
-    </div>
-   <script src="../js/ToDo.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/ToDo.js"></script>
 </body>
 </html>
